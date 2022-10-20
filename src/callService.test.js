@@ -18,7 +18,8 @@ test('call ky', async () => {
     },
   ];
   const CallService = jest.fn(() => mockUsers);
-  CallService.mockReturnValue(mockUsers);
+  // const CallService = jest.fn();
+  // CallService.mockReturnValue(mockUsers);
 
   const users = CallService('https://jsonplaceholder.typicode.com/users');
 
