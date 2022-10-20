@@ -1,7 +1,6 @@
-jest.mock('ky-universal');
+jest.mock('ky-universal'); // mock ky
 import ky from 'ky-universal';
-import { jest } from '@jest/globals';
-
+import { jest } from '@jest/globals'; // vite react
 
 test('call ky', async () => {
   const mockUsers = [
@@ -18,11 +17,17 @@ test('call ky', async () => {
       email: 'Shanna@melissa.tv',
     },
   ];
-    ky.get = jest.fn();
-    ky.get.mockReturnValue({ json() { return mockUsers}});
+
+  ky.get = jest.fn();
+  ky.get.mockReturnValue({
+    json() {
+      return mockUsers;
+    },
+  });
 
   const users = await ky
-    .get('https://jsonplaceholder.typicode.com/users').json();
+    .get('https://jsonplaceholder.typicode.com/users')
+    .json();
 
   expect(users.length).toBe(2);
 });
