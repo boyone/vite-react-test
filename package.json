@@ -8,7 +8,7 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "jest",
-    "test:exp": "node --experimental-vm-modules node_modules/.bin/jest"
+    "test:exp": "node --experimental-vm-modules node_modules/jest/bin/jest.js"
   },
   "dependencies": {
     "ky": "^0.31.4",
